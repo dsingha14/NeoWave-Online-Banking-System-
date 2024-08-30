@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+	{% block title %}
+	<title>NeoWave Bank-Personal Banking & Netbanking Services</title>
+	{% endblock %}
+	{% block stylecontent %}
+	<link href="{% static 'css/index-home.css' %}" rel="stylesheet">
+	<link href="{% static 'css/index-login.css' %}" rel="stylesheet">
+	<link href="{% static 'css/form.css' %}" rel="stylesheet">
+	<link href="{% static 'css/sub-footer.css' %}" rel="stylesheet">
+	{% endblock %}
+</head>
+<body>
+	{% block bodycontent %}
+	{% if user.is_authenticated %}
+	<div class="welcome-div">
+		<h1>Welcome, {{ user.username }}</h1>
+	</div>
+	<section class="services">
+			<br><h2 style="text-align: center;">Our Services</h2>
+			<div class="service-background">
+				<div class="service-grid">
+					<a href="/initiate_transaction">
+					<div class="service-item">
+						<img class="icon" src="../static/assets/moneyicon.png" alt="">
+						<h3>Money Transfer</h3>
+					</div></a>
+
+					<a href="/useraccounts">
+					<div class="service-item">
+						<img class="icon" src="../static/assets/bankicon.png" alt="">
+							<h3>Accounts</h3>
+					</div></a>
+
+					<a href="/transaction_history">
+					<div class="service-item history">
+						<img class="icon" src="../static/assets/transaction.png" alt="">
+						<h3>Transaction History</h3>
+					</div></a>
+
+					<a href="/cheque_details">
+					<div class="service-item">
+						<img class="icon" src="../static/assets/cheque.png" alt="">
+						<h3>Cheques</h3>
+					</div></a>
+
+					<a href="/get_statement">
+					<div class="service-item">
+						<img class="icon" src="../static/assets/money_insights.png" alt="">
+						<h3>Money Insights</h3>
+					</div></a>
+
+					<a href="https://rbi.org.in/Scripts/Complaints.aspx">
+					<div class="service-item">
+						<img class="icon" src="../static/assets/emergency.png" alt="">
+						<h3>Emergency</h3>
+					</div></a>
+
+				</div>
+			</div>
+	</section>
+	{% else %}
+
+	<section class="open-account">
+		<div class="container">
+			<div class="content open-account-div">
+				<h1>FOR ALL THINGS MONEY</h1>
+				<p class="manage-money">
+					Manage your money with <span style="color: #2487CE;">peace of mind</span></p>
+				<a href="./register" class="open-account-button">Open&nbsp;Savings&nbsp;Account</a>
+				<div class="open-account-image">
+					<img src="{% static 'assets/homepage.png' %}" alt="front page">
+				</div>
+				<h1>GET A SAVINGS ACCOUNT<br>UNLIKE ANY OTHER</h1>
+			</div>
+		</div>
+	</section>
+
+	<section class="bank-flash">
+		<div class="container">
+			<div class="content">
+				<div class="bank-flash-div">
+					<div class="bank-flash-image">
+						<img src="{% static 'assets/zero balance.png' %}" alt="zero balance">
+					</div>
+					<div class="bank-flash-text">
+						<h3>BANK IN FLASH</h3>
+						<b><h1>Banking at the Speed of Thought: Open an Account in a Flash!</h1></b>
+						<p>Experience lightning-fast account setup in 60 seconds! Swiftly create your bank account online with ease. No paperwork, no waiting - start banking in a flash!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="welcome-gift">
+		<div class="container">
+			<div class="content">
+				<div class="welcome-gift-div">
+					<div class="welcome-gift-text">
+						<h3>EXCLUSIVE WELCOME GIFT</h3>
+						<b><h1>Welcome to Our Bank: Get Rs. 1000 as a Gift!</h1></b>
+						<p>Welcome to Our Bank! As a new user, we're thrilled to offer you an exclusive welcome gift of Rs. 1000 when you open an account with us. Take advantage of this special offer and kickstart your banking journey with us today!</p>
+					</div>
+					<div class="welcome-gift-image">
+						<img src="{% static 'assets/cashback.png' %}" alt="front page">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="sub-footer">
+				<p>Pritam Shaw</p>
+				<div class="footer-box-social">
+					<ul>
+						<li><a href="https://github.com/thepritamshaw" target="_blank"><img
+									src="{% static 'assets/github-transparent.png' %}" alt="Github"></a>
+							<div class="placeholder"></div>
+						</li>
+						<li><a href="https://www.linkedin.com/in/thepritamshaw/" target="_blank"><img
+									src="{% static 'assets/linkedin-transparent.png' %}" alt="Linkedin"></a>
+							<div class="placeholder"></div>
+						</li>
+						<li><a href="https://www.twitter.com/thepritamshaw/" target="_blank"><img
+									src="{% static 'assets/twitter-transparent.png' %}" alt="Twitter"></a>
+							<div class="placeholder"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	{% endif %}
+	{% endblock%}
+</body>
+</html>

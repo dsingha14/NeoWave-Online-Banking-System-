@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+	{% block title %}
+	<title>Log in to your Account- NeoWave Bank</title>
+	{% endblock %}
+	{% block stylecontent %}
+	<link href="{% static 'css/animation.css' %}" rel="stylesheet">
+	<link href="{% static 'css/lessWidthAnimation.css' %}" rel="stylesheet">
+	<link href="{% static 'css/form.css' %}" rel="stylesheet">
+	{% endblock %}
+</head>
+<body>
+	{% block bodycontent %}
+	<section class="container" >
+		<div class="container">
+			<div class="content">
+				<form action="login" method="POST" class="animation">
+				<h1>Login Now</h1>
+				{% for message in messages %}
+				<h3>{{message}}</h3>
+				{% endfor %}
+					{% csrf_token %}
+					<p class="input">Username</p>
+					<input type="text" name="username" placeholder="Enter username here"/>
+					<p class="input">Password</p>
+					<input type="password" name="password" placeholder="Enter password here" /><br>
+					<input type="submit" class="button" />
+					<br>
+					<a href="/register">Create New Account</a>
+				</form>
+				
+			</div>
+		</div>
+	</section>
+	{% endblock%}
+</body>
